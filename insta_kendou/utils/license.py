@@ -17,10 +17,10 @@ REQUIRED_ACCESS_CODE = "LICENCE_DESACTIVEE_ACCES_LIBRE"
 # Exception personnalisée pour les erreurs de licence
 class LicenseError(Exception):
     """Exception levée quand la licence n'est pas valide"""
-    def init(self, message=None):
+    def __init__(self, message=None):
         if message is None:
             message = get_license_error_message()
-        super().init(message)
+        super().__init__(message)
 
 def validate_license() -> bool:
     """
